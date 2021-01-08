@@ -1,0 +1,20 @@
+@import "../../constants.scss";
+.starter-form {
+	margin-left: 30%;
+	margin-right: 30%;
+	background-color: rgba(22, 22, 22, 0.479);
+	margin-top: 10%;
+	padding: 2rem;
+
+	.btn-submit {
+		background-color: $quiz-orange;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		border: none;
+		border-radius: 3px;
+		color: black;
+		font-weight: bold;
+	}
+}
