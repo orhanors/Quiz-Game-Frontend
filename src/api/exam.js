@@ -48,14 +48,10 @@ export const getScore = async (examId) => {
 			"Content-Type": "application/x-www-form-urlencoded",
 			"Access-Control-Allow-Origin": "*",
 		},
-		credentials: "include",
 	};
 
 	try {
-		const response = await axios.get(
-			`${REACT_APP_BE_URL}/exams/${examId}`,
-			config
-		);
+		const response = await axios.get(`${REACT_APP_BE_URL}/exams/${examId}`);
 		console.log("score", response.data);
 		return response.data;
 	} catch (error) {

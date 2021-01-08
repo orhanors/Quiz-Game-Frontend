@@ -28,7 +28,7 @@ function Questions(props) {
 
 		setPage(page + 1);
 	};
-
+	//TODO One by one sent
 	const handleSubmitAnswers = async () => {
 		const resultForPost = await sendAnswers(answers, exam._id);
 
