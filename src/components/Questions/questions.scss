@@ -1,0 +1,51 @@
+@import "../../constants.scss";
+.quiz-page {
+	margin-top: 7%;
+	.question {
+		padding: 1.5rem;
+		margin-left: 20%;
+		margin-right: 20%;
+		.answers {
+			margin-top: 1rem;
+
+			h5 {
+				background-color: $answer-default;
+				color: black;
+				text-align: center;
+				padding: 2rem;
+				margin-bottom: 1rem;
+
+				&:hover {
+					cursor: pointer;
+					background-color: $answer-hover;
+				}
+				&:active {
+					background-color: $quiz-orange;
+				}
+			}
+		}
+	}
+
+	.submit {
+		background-color: $success-green;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		border: none;
+		border-radius: 3px;
+		color: white;
+		font-weight: bold;
+	}
+	.again {
+		background-color: $quiz-orange;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		border: none;
+		border-radius: 3px;
+		color: white;
+		font-weight: bold;
+	}
+}

@@ -1,45 +1,29 @@
-import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Form, Container } from "react-bootstrap";
 import "./startForm.scss";
-import { startExam } from "../../api/exam";
+
 import { showErrorMessage } from "../../helpers/messages";
+import ExamContext from "../../contexts/ExamContext";
+
 /**
  * 
 	check("candidateName")
  * check("name")
  */
 function StartForm(props) {
-	const [formData, setFormData] = useState({
-		candidateName: "",
-		name: "",
-	});
-	const [errorMsg, setErrorMsg] = useState(null);
+	const { candidateName, name } = props.formData;
+	const { errorMsg } = props;
 
-	const { candidateName, name } = formData;
+	const exam = useContext(ExamContext);
 
-	const handleFormChange = (e) => {
-		setFormData({
-			...formData,
-			[e.target.id]: e.target.value,
-		});
-	};
-
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-
-		const result = await startExam(formData);
-		if (!result.success) {
-			setErrorMsg(result.errors);
-		}
-	};
 	const showForm = () => {
 		return (
-			<Form onSubmit={handleSubmit}>
-				<Form.Group controlId='formBasicEmail'>
+			<Form onSubmit={props.handleSubmit}>
+				<Form.Group>
 					<Form.Label>What's your name?</Form.Label>
 					<Form.Control
 						id='candidateName'
-						onChange={handleFormChange}
+						onChange={props.handleFormChange}
 						value={candidateName}
 						type='text'
 						placeholder='Your name'
@@ -49,11 +33,11 @@ function StartForm(props) {
 					</Form.Text>
 				</Form.Group>
 
-				<Form.Group controlId='formBasicEmail'>
+				<Form.Group>
 					<Form.Label>What's the name of your journey?</Form.Label>
 					<Form.Control
 						id='name'
-						onChange={handleFormChange}
+						onChange={props.handleFormChange}
 						value={name}
 						type='text'
 						placeholder='Name of your journey'
