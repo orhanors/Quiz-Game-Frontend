@@ -1,6 +1,6 @@
 # Quiz Game React
 
-User can join to answer randomly generated questions. You can check out the backend implementation <a href="https://github.com/orhanors/Quiz-Game-Backend">here</a>
+User can join to answer randomly generated questions. You can check out the backend implementation <a href="https://github.com/orhanors/Quiz-Game-Backend">here </a>
 
 ### Features
 
